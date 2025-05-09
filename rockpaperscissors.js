@@ -12,14 +12,15 @@ function getComputerChoice(){
 
 function getHumanChoice(){
     let humanChoice = prompt("Enter your choice: Rock/Paper/Scissors");
-    return humanChoice;
+    return humanChoice.toLowerCase();
 }
 
 let humanScore = 0;
 let computerScore = 0;
 
-function playRound(getComputerChoice, getHumanChoice){
-    let humanChoice = humanChoice.toLowerCase();
+function playRound(){
+    let humanChoice = getHumanChoice();
+    let computerChoice = getComputerChoice();
     if (humanChoice == computerChoice){
         alert("Draw. Nobody beats each other.")
     } else if (humanChoice=='rock' && computerChoice=='scissors'){
@@ -52,9 +53,9 @@ function playGame(){
     if (computerScore == humanScore){
         alert("Draw. Nobody wins the game.");
     } else if (computerScore < humanScore){
-        alert("You win the game!");
+        alert(`You win the game! Final count: ${humanScore}/5.`);
     } else {
-        alert("You lose the game!");
+        alert(`You lose the game! Final count: ${humanScore}/5.`);
     }
 }
 
